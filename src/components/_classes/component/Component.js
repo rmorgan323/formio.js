@@ -25,7 +25,7 @@ if (!Templates) {
   Templates = require('../../../templates/Templates').default;
 }
 
-Quill.register('modules/table', "".concat(_Formio.GlobalFormio.cdn.baseUrl, "/quill/quill-table.js"));
+Quill.register('modules/table', ''.concat(Formio.GlobalFormio.cdn.baseUrl, '/quill/quill-table.js'));
 
 /**
  * This is the Component class
@@ -2129,14 +2129,14 @@ export default class Component extends Element {
         modules: {
           table: false,
           clipboard: {
-            "matchVisual": false
+            'matchVisual': false
           },
           toolbar: [
-            [{ "size": [ "small", false, "large", "huge" ] }],
-            ["bold", "italic", "underline", "clean"],
-            [{ "color": [] }],
-            [{ "list": "ordered" },{ "list": "bullet" },{ "indent": "-1" },{ "indent": "+1" }],
-            ["link"]
+            [{ 'size': ['small', false, 'large', 'huge'] }],
+            ['bold', 'italic', 'underline', 'clean'],
+            [{ 'color': [] }],
+            [{ 'list': 'ordered' },{ 'list': 'bullet' },{ 'indent': '-1' },{ 'indent': '+1' }],
+            ['link']
           ]
         }
       },
