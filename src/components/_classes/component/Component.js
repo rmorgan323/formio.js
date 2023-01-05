@@ -25,6 +25,8 @@ if (!Templates) {
   Templates = require('../../../templates/Templates').default;
 }
 
+Quill.register('modules/table', "".concat(_Formio.GlobalFormio.cdn.baseUrl, "/quill/quill-table.js"));
+
 /**
  * This is the Component class
  which all elements within the FormioForm derive from.
@@ -2121,17 +2123,20 @@ export default class Component extends Element {
     return {
       quill: {
         theme: 'snow',
-        placeholder: this.t(this.component.placeholder, { _userInput: true }),
+        placeholder: this.t(this.component.placeholder, {
+          _userInput: true
+        }),
         modules: {
+          table: false,
+          clipboard: {
+            "matchVisual": false
+          },
           toolbar: [
-            [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-            [{ 'font': [] }],
-            ['bold', 'italic', 'underline', 'strike', { 'script': 'sub' }, { 'script': 'super' }, 'clean'],
-            [{ 'color': [] }, { 'background': [] }],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }, { 'align': [] }],
-            ['blockquote', 'code-block'],
-            ['link', 'image', 'video', 'formula', 'source']
+            [{ "size": [ "small", false, "large", "huge" ] }],
+            ["bold", "italic", "underline", "clean"],
+            [{ "color": [] }],
+            [{ "list": "ordered" },{ "list": "bullet" },{ "indent": "-1" },{ "indent": "+1" }],
+            ["link"]
           ]
         }
       },
@@ -2206,7 +2211,7 @@ export default class Component extends Element {
     settings = {
       ...settings,
       modules: {
-        table: true,
+        table: false,
         ...settings.modules
       }
     };
