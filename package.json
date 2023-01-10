@@ -1,5 +1,5 @@
 {
-  "name": "formiojs",
+  "name": "@rmorgan323/formiojs",
   "version": "4.15.0-rc.16",
   "description": "JavaScript powered Forms with JSON Form Builder",
   "main": "index.js",
